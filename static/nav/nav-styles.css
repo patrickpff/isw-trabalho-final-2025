@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+a {
+    color: darkcyan;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    background-color: rgb(2, 78, 78);
+}
+
+a:visited {
+    color:darkcyan;
+}

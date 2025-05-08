@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "titulo": "A palavra que resta",
+        "autor": "Stênio Gardel",
+        "paginas": 152,
+        "editora": "Companhia das Letras",
+        "ano": 2021
+    },
+    {
+        "id": 2,
+        "titulo": "Ainda estou aqui",
+        "autor": "Marcelo Rubens Paiva",
+        "paginas": 251,
+        "editora": "Alfaguara",
+        "ano": 2015
+    },
+    {
+        "id": 3,
+        "titulo": "Contato",
+        "autor": "Carl Sagan",
+        "paginas": 440,
+        "editora": "Companhia de Bolso",
+        "ano": 2008
+    }
+]

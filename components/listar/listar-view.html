@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="../../static/estilos.css">
+    <link rel="stylesheet" href="listar-styles.css">
+
+    <style>
+        #listarLivros {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #listarLivros thead {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #listarLivros td, #listarLivros th {
+            border-bottom: 1px solid black;
+        }
+
+        #listarLivros thead, tfoot {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #listarLivros th, td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+    <title>Trabalho final</title>
+</head>
+<body>
+    <object data="static/nav/nav-view.html" type="text/html" id="navbar"></object>
+
+    <div class="main">
+        <object data="static/header/header-view.html" type="text/html" id="header"></object>
+        <div id="body">
+            <table id="listarLivros">
+                <thead>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Pág.</th>
+                    <th>Editora</th>
+                    <th>Ano</th>
+                    <th>Ação</th>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">Trabalho final</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <object data="static/footer/footer-view.html" type="text/html" id="footer"></object>
+
+        <script>
+            const HOST = "http://localhost:8080"
+            /** Exemplo prático de chamada em API  */
+            async function listar() {
+                let response = await fetch(HOST + "/backend/listar")
+                let livros = await response.json()
+
+                let table = document.getElementById("listarLivros")
+                let tbody = table.getElementsByTagName('tbody')[0]
+                // listarLivros.innerHTML = ""
+
+                livros.forEach(livro => {
+                    let tr = document.createElement("tr")
+
+                    let tdTitulo = document.createElement("td")
+                    tdTitulo.innerText = livro.titulo
+                    tr.appendChild(tdTitulo)
+
+                    tbody.appendChild(tr)
+                    // console.log(livro)
+                });
+            }
+
+            listar()
+        </script>
+    </div>
+</body>
+</html>
