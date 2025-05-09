@@ -58,31 +58,7 @@
         </div>
         <object data="static/footer/footer-view.html" type="text/html" id="footer"></object>
 
-        <script>
-            const HOST = "http://localhost:8080"
-            /** Exemplo prático de chamada em API  */
-            async function listar() {
-                let response = await fetch(HOST + "/backend/listar")
-                let livros = await response.json()
-
-                let table = document.getElementById("listarLivros")
-                let tbody = table.getElementsByTagName('tbody')[0]
-                // listarLivros.innerHTML = ""
-
-                livros.forEach(livro => {
-                    let tr = document.createElement("tr")
-
-                    let tdTitulo = document.createElement("td")
-                    tdTitulo.innerText = livro.titulo
-                    tr.appendChild(tdTitulo)
-
-                    tbody.appendChild(tr)
-                    // console.log(livro)
-                });
-            }
-
-            listar()
-        </script>
+        <script src="\components\listar\scripts-listar.js"></script>
     </div>
 </body>
 </html>
