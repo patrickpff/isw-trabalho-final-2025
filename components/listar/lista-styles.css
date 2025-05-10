@@ -1,3 +1,25 @@
-body {
-    background-color: red;
+
+#listarLivros {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#listarLivros thead {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#listarLivros td, #listarLivros th {
+    border-bottom: 1px solid black;
+}
+
+#listarLivros thead, tfoot {
+    font-weight: bold;
+    text-align: center;
+}
+
+#listarLivros th, td {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

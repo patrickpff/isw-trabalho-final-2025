@@ -61,7 +61,7 @@ class serverHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html; charset=utf-8")
             self.end_headers()
-            data = directory + "/components/sobre/sobre.html"
+            data = directory + "/components/sobre/sobre-view.html"
             
             with open(data, 'r', encoding="utf-8") as arquivo:
                 conteudo = arquivo.read()
@@ -73,7 +73,7 @@ class serverHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html; charset=utf-8")
             self.end_headers()
-            data = directory + "/components/cadastrar/cadastrar.html"
+            data = directory + "/components/cadastrar/cadastrar-view.html"
             
             with open(data, 'r', encoding="utf-8") as arquivo:
                 conteudo = arquivo.read()
