@@ -5,6 +5,7 @@
         "autor": "Stênio Gardel",
         "paginas": 152,
         "editora": "Companhia das Letras",
+        "genero": "Romance",
         "ano": 2021
     },
     {
@@ -13,6 +14,7 @@
         "autor": "Marcelo Rubens Paiva",
         "paginas": 251,
         "editora": "Alfaguara",
+        "genero": "Histórico",
         "ano": 2015
     },
     {
@@ -21,6 +23,7 @@
         "autor": "Carl Sagan",
         "paginas": 440,
         "editora": "Companhia de Bolso",
+        "genero": "Ficção Científica",
         "ano": 2008
     }
 ]

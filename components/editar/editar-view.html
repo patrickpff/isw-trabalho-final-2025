@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <link rel="stylesheet" href="../../static/estilos.css">
-    <link rel="stylesheet" href="\components\cadastrar\cadastrar-styles.css">
+    <link rel="stylesheet" href="\components\editar\editar-styles.css">
     <title>Trabalho final</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div id="body">
             <form action="#">
                 <label for="titulo">Título</label>
-                <input type="text" name="titulo" id="titulo">
+                <input type="text" name="titulo" id="titulo" onkeypress="onChange()">
 
                 <label for="autor">Autor</label>
                 <input type="text" name="autor" id="autor">
@@ -42,7 +42,7 @@
         </div>
         <object data="static/footer/footer-view.html" type="text/html" id="footer"></object>
 
-        <script src="\components\cadastrar\cadastrar-scripts.js"></script>
+        <script src="\components\editar\editar-scripts.js"></script>
     </div>
 </body>
 </html>

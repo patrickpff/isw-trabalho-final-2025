@@ -5,35 +5,31 @@ async function listar() {
     let livros = await response.json()
 
     let table = document.getElementById("listarLivros")
-    let tbody = table.getElementsByTagName('tbody')[0]
-    // listarLivros.innerHTML = ""
+    if (table != null) {
+        let tbody = table.getElementsByTagName('tbody')[0]
+        // listarLivros.innerHTML = ""
 
-    livros.forEach(livro => {
-        let tr = document.createElement("tr")
+        livros.forEach(livro => {
+            let tr = document.createElement("tr")
 
-        let tdTitulo = document.createElement("td")
-        tdTitulo.innerText = livro.titulo
-        tr.appendChild(tdTitulo)
+            let tdTitulo = document.createElement("td")
+            tdTitulo.innerText = livro.titulo
+            tr.appendChild(tdTitulo)
+            /**
+             * Termine de preencher a tabela de livros
+             */
 
-        let tdAutor = document.createElement("td")
-        tdAutor.innerText = livro.autor
-        tr.appendChild(tdAutor)
+            let tdAcao = document.createElement("td")
+            let btnEditar = document.createElement("a")
+            btnEditar.innerText = "Editar"
+            btnEditar.href = HOST + "/editar?id="+livro.id
+            tdAcao.appendChild(btnEditar)
 
-        let tdPaginas = document.createElement("td")
-        tdPaginas.innerText = livro.paginas
-        tr.appendChild(tdPaginas)
+            tr.appendChild(tdAcao)
 
-        let tdEditora = document.createElement("td")
-        tdEditora.innerText = livro.editora
-        tr.appendChild(tdEditora)
-
-        let tdAno = document.createElement("td")
-        tdAno.innerText = livro.ano
-        tr.appendChild(tdAno)
-
-        tbody.appendChild(tr)
-        // console.log(livro)
-    });
+            tbody.appendChild(tr)
+        });
+    }
 }
 
 listar()

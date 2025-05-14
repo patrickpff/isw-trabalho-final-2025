@@ -2,6 +2,7 @@ import cgi
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 import json
+from urllib.parse import urlparse, parse_qs
 
 class serverHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -69,6 +70,18 @@ class serverHandler(BaseHTTPRequestHandler):
                 
             return
         
+        if self.path.startswith('/ia'):
+            self.send_response(200)
+            self.send_header("Content-type", "text/html; charset=utf-8")
+            self.end_headers()
+            data = directory + "/components/ia/ia-view.html"
+            
+            with open(data, 'r', encoding="utf-8") as arquivo:
+                conteudo = arquivo.read()
+                self.wfile.write(conteudo.encode('utf-8'))
+                
+            return
+        
         if self.path.startswith('/cadastrar'):
             self.send_response(200)
             self.send_header("Content-type", "text/html; charset=utf-8")
@@ -97,7 +110,7 @@ class serverHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html; charset=utf-8")
             self.end_headers()
-            data = directory + "/components/cadastrar/editar.html"
+            data = directory + "/components/editar/editar-view.html"
             
             with open(data, 'r', encoding="utf-8") as arquivo:
                 conteudo = arquivo.read()
